@@ -3,7 +3,7 @@
 version: '2'
 services:
   firefox:
-    image: selemium-chinese/node-firefox-debug:3.9.1-actinium
+    image: selenium-chinese/node-firefox-debug:3.9.1-actinium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -14,7 +14,7 @@ services:
       - "15901:5900"
 
   chrome:
-    image: selemium-chinese/node-chrome-debug:3.9.1-actinium
+    image: selenium-chinese/node-chrome-debug:3.9.1-actinium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
