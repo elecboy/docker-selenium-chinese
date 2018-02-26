@@ -3,22 +3,26 @@
 version: '2'
 services:
   firefox:
-    image: selemium-chinese/node-firefox:3.9.1-actinium
+    image: selemium-chinese/node-firefox-debug:3.9.1-actinium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
       - hub
     environment:
       HUB_HOST: hub
+    ports:
+      - "15901:5900"
 
   chrome:
-    image: selemium-chinese/node-chrome:3.9.1-actinium
+    image: selemium-chinese/node-chrome-debug:3.9.1-actinium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
       - hub
     environment:
       HUB_HOST: hub
+    ports:
+      - "15900:5900"
 
   hub:
     image: selenium/hub:3.9.1-actinium
