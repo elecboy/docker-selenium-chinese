@@ -4,6 +4,7 @@ version: '2'
 services:
   firefox:
     image: selenium-chinese/node-firefox:3.9.1-actinium
+    restart: always
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -18,6 +19,7 @@ services:
 
   chrome:
     image: selenium-chinese/node-chrome:3.9.1-actinium
+    restart: always
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -31,6 +33,7 @@ services:
 
   hub:
     image: selenium/hub:3.9.1-actinium
+    restart: always
     environment:
       - GRID_MAX_SESSION=50
     ports:
