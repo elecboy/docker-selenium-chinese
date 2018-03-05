@@ -1,4 +1,4 @@
-FROM selenium/node-firefox:3.9.1-actinium
+FROM selenium/node-firefox:3.10.0-argon
 ENV NODE_MAX_INSTANCES 10
 ENV NODE_MAX_SESSION 10
 

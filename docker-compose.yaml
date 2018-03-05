@@ -3,7 +3,8 @@
 version: '2'
 services:
   firefox:
-    image: selenium-chinese/node-firefox:3.9.1-actinium
+    build: ./node-firefox/
+    image: selenium-chinese/node-firefox:3.10.0-argon
     restart: always
     volumes:
       - /dev/shm:/dev/shm
@@ -18,7 +19,8 @@ services:
 #      - "15901:5900"
 
   chrome:
-    image: selenium-chinese/node-chrome:3.9.1-actinium
+    build: ./node-chrome/
+    image: selenium-chinese/node-chrome:3.10.0-argon
     restart: always
     volumes:
       - /dev/shm:/dev/shm
@@ -32,7 +34,7 @@ services:
 #      - "15900:5900"
 
   hub:
-    image: selenium/hub:3.9.1-actinium
+    image: selenium/hub:3.10.0-argon
     restart: always
     environment:
       - GRID_MAX_SESSION=50
